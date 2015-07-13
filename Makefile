@@ -6,7 +6,7 @@ fetch_vms: VMs/IE11\ -\ Win7.ova VMs/IE8\ -\ Win7.ova VMs/IE10\ -\ Win7.ova VMs/
 
 VMs/IE11\ -\ Win7.ova:
 	curl -O -L "https://az412801.vo.msecnd.net/vhd/VMBuild_20141027/VirtualBox/IE11/Linux/IE11.Win7.For.Linux.VirtualBox.zip"
-	unzip IE9.Win7.For.Linux.VirtualBox.zip
+	unzip IE11.Win7.For.Linux.VirtualBox.zip
 	mkdir VMs || true
 	mv "$(@F)" VMs
 	rm IE9.Win7.For.Linux.VirtualBox.zip
