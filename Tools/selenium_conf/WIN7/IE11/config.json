@@ -10,7 +10,7 @@
         {
             "platform": "WINDOWS",
             "browserName": "internet explorer",
-            "version": 11,
+            "version": "11",
             "maxInstances": 1,
             "seleniumProtocol": "WebDriver"
         },

@@ -1,7 +1,7 @@
 # Config; See readme for details.
 java_exe="jre-windows-i586.exe"
 firefox_exe="firefox.exe"
-chrome_exe="chrome.exe"
+chrome_exe="chrome.msi"
 selenium_jar="selenium-server-standalone.jar"
 
 if [ $(uname) == "Darwin" ]
@@ -13,12 +13,13 @@ else
   nic_bridge="eth0"
 fi
 
+wd=`pwd`
 vm_path="VMs/"
-vm_mem="768"
+vm_mem="1024"
 vm_mem_xp="512"
 deuac_iso="deuac.iso"
-tools_path="Tools/"
-selenium_path="Tools/selenium_conf/"
+tools_path="${wd}/Tools/"
+selenium_path="${tools_path}selenium_conf/"
 ie_cache_reg="ie_disablecache.reg"
 ie_protectedmode_reg="ie_protectedmode.reg"
 log_path=""

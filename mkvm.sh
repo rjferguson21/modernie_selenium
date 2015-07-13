@@ -312,9 +312,9 @@ disable_firewall() {
 
 # Create C:\Temp\; Most Functions who copy files to the VM are relying on this folder and will fail is he doesn't exists.
 create_temp_path() {
-  vm_temp="C:\\Temp\\"
+  vm_temp="C:/Temp/"
   log "Creating ${vm_temp}..."
-  execute "VBoxManage guestcontrol \"${vm_name}\" createdirectory \"${vm_temp}\" --username 'IEUser' --password 'Passw0rd!'"
+  execute "VBoxManage guestcontrol '${vm_name}' createdirectory '${vm_temp}' --username 'IEUser' --password 'Passw0rd!'"
   chk fatal $? "Could not create ${vm_temp}"
 }
 
@@ -365,9 +365,9 @@ install_chrome() {
   log "Installing Chrome..."
   #execute "VBoxManage guestcontrol \"${vm_name}\" copyto \"${tools_path}${chrome_exe}\" "${vm_temp}" --username 'IEUser' --password 'Passw0rd!'"
   copyto "${chrome_exe}" "${tools_path}" "${vm_temp}"
-  execute "VBoxManage guestcontrol \"${vm_name}\" execute --image 'C:/Windows/System32/msiexec.exe' --username 'IEUser' --password 'Passw0rd!' -- /qn /i \"${vm_temp}${chrome_exe}\""
+  execute "VBoxManage guestcontrol \"${vm_name}\" execute --image 'C:/Windows/System32/msiexec.exe' --username 'IEUser' --password 'Passw0rd!' -- /qn /i \"C:\Temp\chrome.msi\""
   chk error $? "Could not install Chrome"
-  waiting 120
+  waiting 320
   install_chrome_driver
 }
 
@@ -431,7 +431,7 @@ ie11_driver_reg() {
 # Install Selenium
 install_selenium() {
   log "Creating C:/selenium/..."
-  execute "VBoxManage guestcontrol \"${vm_name}\" createdirectory C:/selenium/ --username 'IEUser' --password 'Passw0rd!'"
+  execute "VBoxManage guestcontrol \"${vm_name}\" createdirectory 'C:/selenium/' --username 'IEUser' --password 'Passw0rd!'"
   chk fatal $? "Could not create C:/Selenium/"
   log "Installing Selenium..."
   #execute "VBoxManage guestcontrol \"${vm_name}\" copyto \"${selenium_path}${selenium_jar}\" C:/selenium/ --username 'IEUser' --password 'Passw0rd!'"
