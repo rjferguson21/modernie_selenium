@@ -363,7 +363,6 @@ install_chrome_driver() {
 # Install Chrome.
 install_chrome() {
   log "Installing Chrome..."
-  #execute "VBoxManage guestcontrol \"${vm_name}\" copyto \"${tools_path}${chrome_exe}\" "${vm_temp}" --username 'IEUser' --password 'Passw0rd!'"
   copyto "${chrome_exe}" "${tools_path}" "${vm_temp}"
   execute "VBoxManage guestcontrol \"${vm_name}\" execute --image 'C:/Windows/System32/msiexec.exe' --username 'IEUser' --password 'Passw0rd!' -- /qn /i \"C:\Temp\chrome.msi\""
   chk error $? "Could not install Chrome"
