@@ -9,7 +9,7 @@ VMs/IE11\ -\ Win7.ova:
 	unzip IE11.Win7.For.Linux.VirtualBox.zip
 	mkdir VMs || true
 	mv "$(@F)" VMs
-	rm IE9.Win7.For.Linux.VirtualBox.zip
+	rm IE11.Win7.For.Linux.VirtualBox.zip
 
 VMs/IE10\ -\ Win7.ova:
 	curl -O -L "https://az412801.vo.msecnd.net/vhd/VMBuild_20141027/VirtualBox/IE10/Linux/IE10.Win7.For.Linux.VirtualBox.zip"
@@ -30,7 +30,7 @@ VMs/IE8\ -\ Win7.ova:
 	unzip IE8.Win7.For.Linux.VirtualBox.zip
 	mkdir VMs || true
 	mv "$(@F)" VMs
-	rm IE9.Win7.For.Linux.VirtualBox.zip
+	rm IE8.Win7.For.Linux.VirtualBox.zip
 
 Tools/selenium_conf/selenium-server-standalone.jar:
 	curl -o Tools/selenium_conf/selenium-server-standalone.jar -L http://selenium-release.storage.googleapis.com/2.44/selenium-server-standalone-2.44.0.jar
