@@ -10,7 +10,7 @@ then
   nic_bridge="en0"
 else
   # This works on Ubuntu
-  nic_bridge="eth0"
+  nic_bridge="wlan0"
 fi
 
 wd=`pwd`
